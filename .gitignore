@@ -1,0 +1,12 @@
+node_modules
+*/*.png
+*/*.jpg
+*/*.jpeg
+*/*.gif
+*/*.bmp
+*/*.tiff
+*/*.mp4
+*/*.avi
+*/*.mov
+*/*.wmv
+*/*.flv
