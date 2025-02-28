@@ -7,47 +7,52 @@ This project provides a simple Node.js application to resize images for Instagra
 ```
 image-resizer
 ├── src
-│   ├── index.js          # Entry point of the application
+│   ├── index.js                    # Entry point of the application
 │   └── utils
-│       └── resize.js     # Utility functions for resizing images
-├── package.json          # Project metadata and dependencies
-├── .gitignore            # Files and directories to be ignored by Git
-└── README.md             # Project documentation
+│       ├── BaseFileSelector.js     # Responsible for selecting appropriate image files
+│       ├── CreatePostUseCase.js    # Handles the creation of new posts
+│       ├── ImageProcessor.js       # Contains the logic for processing images
+├── package.json                    # Project metadata and dependencies
+├── .gitignore                      # Files and directories to be ignored by Git
+└── README.md                       # Project documentation
 ```
 
 ## Installation
 
-To get started, clone the repository and install the necessary dependencies:
+To install the dependencies for this project, run the following command:
 
 ```bash
-git clone <repository-url>
-cd image-resizer
 npm install
 ```
 
 ## Usage
 
-To resize an image, run the following command:
+To start the application, use the following command:
 
 ```bash
-node src/index.js <path-to-image>
+node src/index.js
 ```
 
-This will generate resized images in the current directory, formatted for Instagram and Facebook.
+## Features
 
-## Image Dimensions
+- Resize images to fit Instagram and Facebook dimensions
+- Supports multiple image formats
+- Easy to use command-line interface
 
-- **Instagram**: 1080 x 1080 pixels
-- **Facebook**: 1200 x 630 pixels
+## Contributing
 
-## Example
+If you would like to contribute to this project, please follow these steps:
 
-```bash
-node src/index.js my-image.jpg
-```
-
-This command will take `my-image.jpg` and create resized versions suitable for Instagram and Facebook.
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature-branch`)
+3. Commit your changes (`git commit -am 'Add new feature'`)
+4. Push to the branch (`git push origin feature-branch`)
+5. Create a new Pull Request
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any questions or suggestions, please open an issue or contact the project maintainer.
