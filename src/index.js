@@ -1,3 +1,4 @@
+const fs = require("fs");
 const path = require("path");
 const inquirer = require("inquirer");
 
@@ -6,9 +7,18 @@ const CreatePostUseCase = require("./utils/CreatePostUseCase");
 const BaseFileSelector = require("./utils/BaseFileSelector");
 
 const imagesDir = path.join(__dirname, '..', 'images');
-const privateDir = path.join(__dirname, '..', 'private');
+const privateDir = path.join(__dirname, '..', 'models');
 const outputDir = path.join(__dirname, '..', 'build');
 const supportedImageFormats = ['.png', '.jpg', '.jpeg'];
+
+// Create directories if they do not exist
+if (!fs.existsSync(imagesDir)) {
+    fs.mkdirSync(imagesDir, { recursive: true });
+}
+
+if (!fs.existsSync(privateDir)) {
+    fs.mkdirSync(privateDir, { recursive: true });
+}
 
 async function main() {
     const { fileType } = await inquirer.createPromptModule()({
